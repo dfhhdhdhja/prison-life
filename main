@@ -15,7 +15,7 @@ local plr = game.Players.LocalPlayer
 ---- Prision life
 
 
-	if game.PlaceId == 155615604 then
+
 		print ("Welcome to Zeus gamehub!")
 		local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 		print ("You are in jailbreak!")
@@ -373,5 +373,4 @@ Gay:AddButton({
 			Time = 5
 		})
 
-	end
 
