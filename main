@@ -1,0 +1,377 @@
+------ ZEUS GAMEHUB
+
+-- https://web.roblox.com/groups/32996314/Iua-Iuvrs#!/about
+
+------ MADE BY .LOWPSI ON DISCORD
+
+------ DM ME
+
+
+local plr = game.Players.LocalPlayer
+
+
+
+
+---- Prision life
+
+
+	if game.PlaceId == 155615604 then
+		print ("Welcome to Zeus gamehub!")
+		local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+		print ("You are in jailbreak!")
+		
+		local Window = OrionLib:MakeWindow({Name = "Zeus gamehub", HidePremium = false, SaveConfig = true, ConfigFolder = "Zeus gamehub"})
+
+		
+		local Tab = Window:MakeTab({
+			Name = "Main",
+			Icon = "rbxassetid://4483345998",
+			PremiumOnly = false
+		})
+		
+	
+		--- main
+		local Section = Tab:AddSection({
+			Name = "Main"
+		})
+
+		Section:AddButton({
+			Name = "Criminal Teleport",
+			Callback = function()
+				loadstring(game:HttpGet('https://raw.githubusercontent.com/blakeistheboy/criminalPrisonLife/main/Protected_3173683311872412.lua'))()
+			end	
+			})
+
+		Section:AddDropdown({
+			Name = "Mod Gun",
+			Default = "",
+			Options = {"AK-47", "Remington 870", "M9", "Taser"},
+			Callback = function(v)
+				local module = nil
+				if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(v) then
+					module = require(game:GetService("Players").LocalPlayer.Backpack[v].GunStates)
+				elseif game:GetService("Players").LocalPlayer.Character:FindFirstChild(v) then
+					module = require(game:GetService("Players").LocalPlayer.Character[v].GunStates)
+				end
+				if module ~= nil then
+				
+
+				module["MaxAmmo"] = math.huge
+
+				module["CurrentAmmo"] = math.huge
+
+				module["StoredAmmo"] = math.huge
+
+				module["Range"] = 500
+
+				module["Spread"] = 11
+				
+				module["FireRate"] = 0.0000000000000000000000000000000000000000000000000000000000001
+
+				module["ReloadTime"] = 0.0000000000000000000000000000000000000000000000000000000000001
+
+				module["Bullets"] = 3
+
+				end
+			end    
+		})
+
+
+
+		local teleports = Window:MakeTab({
+			Name = "Teleports",
+			Icon = "rbxassetid://4483345998",
+			PremiumOnly = false
+		})
+		local teleportsS = teleports:AddSection({
+			Name = "teles"
+		})
+
+		teleportsS:AddDropdown({
+			Name = "Teleports!",
+			Default = nil,
+			Options = {"Crim Base", "Cafeteria", "Outside", "Armor Room", "Cars"},
+			Callback = function(v)
+				print(v)
+				if v == "Cafeteria" then
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(915.9605712890625, 99.98993682861328, 2332.4033203125)
+			end 
+				if v == "Outside" then
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(818.7380981445312, 98.18998718261719, 2415.652099609375)
+			end
+				if v == "Armor Room" then
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(836.5181274414062, 99.98998260498047, 2271.486328125)
+			end
+				if v == "Cars" then
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-910.2821044921875, 95.12728881835938, 2148.724365234375)
+			end
+				if v == "Crim Base" then
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-901.2659912109375, 94.1287612915039, 2060.365966796875)
+			end
+		end,   
+		})
+		
+		--[[
+		Name = <string> - The name of the dropdown.
+		Default = <string> - The default value of the dropdown.
+		Options = <table> - The options in the dropdown.
+		Callback = <function> - The function of the dropdown.
+		]]
+		
+		--[[
+		Name = <string> - The name of the section.
+		]]
+		
+		--[[
+		Name = <string> - The name of the tab.
+		Icon = <string> - The icon of the tab.
+		PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
+		]]
+		
+		
+		---- Other Stuff
+		local Gay = Tab:AddSection({
+			Name = "Other Stuff"
+		})
+		
+	
+	
+
+Gay:AddButton({
+	Name = "Noclip",
+	Callback = function()
+      							     
+
+		
+
+
+	
+--- ꜱᴄʀɪᴘᴛ ᴡᴀꜱ ꜱᴛᴏʟᴇɴ ʙʏ @.ʟᴏᴡᴘꜱɪ ᴏɴ ᴅɪꜱᴄᴏʀᴅ ---
+--- PROTECT YOUR SCRIPT LMAOOO ---
+
+
+
+
+
+	local Workspace = game:GetService("Workspace")
+	local CoreGui = game:GetService("CoreGui")
+	local Players = game:GetService("Players")
+	local UserInputService = game:GetService("UserInputService")
+	local Noclip = Instance.new("ScreenGui")
+	local Frame = Instance.new("Frame")
+	local Title = Instance.new("TextLabel")
+	local OnButton = Instance.new("TextButton")
+	local OffButton = Instance.new("TextButton")
+	local Plr = Players.LocalPlayer
+	local Clipon = false
+	local Dragging = false
+	local Offset = Vector2.new(0, 0)
+	
+	Noclip.Name = "Noclip"
+	Noclip.Parent = CoreGui
+	
+	Frame.Name = "Frame"
+	Frame.Parent = Noclip
+	Frame.BackgroundColor3 = Color3.fromRGB(138, 138, 92) -- Naranja fuerte
+	Frame.BorderColor3 = Color3.new(0.0588235, 0.0588235, 0.0588235)
+	Frame.BorderSizePixel = 2
+	Frame.Position = UDim2.new(0.5, -105, 0.5, -63) -- Centrado en la pantalla
+	Frame.Size = UDim2.new(0, 210, 0, 127)
+	Frame.Active = true
+	Frame.Draggable = true -- Hace que el marco sea arrastrable
+	
+	Title.Name = "Title"
+	Title.Parent = Frame
+	Title.BackgroundColor3 = Color3.fromRGB(153, 153, 102) -- Naranja claro
+	Title.BorderSizePixel = 0
+	Title.Size = UDim2.new(1, 0, 0.3, 0)
+	Title.Font = Enum.Font.Highway
+	Title.Text = "NOCLIP BY LUA LUVRS |@.lowpsi on discord|"
+	Title.TextColor3 = Color3.new(0, 0, 0) -- Negro
+	Title.TextScaled = true
+	Title.TextSize = 26
+	Title.TextStrokeColor3 = Color3.new(1, 1, 1) -- Blanco
+	Title.TextStrokeTransparency = 0
+	
+	
+	OnButton.Name = "OnButton"
+	OnButton.Parent = Frame
+	OnButton.BackgroundColor3 = Color3.fromRGB(61, 61, 41) -- Naranja claro
+	OnButton.BorderSizePixel = 0
+	OnButton.Position = UDim2.new(0.15, 0, 0.45, 0) -- Alineado en el centro vertical
+	OnButton.Size = UDim2.new(0.35, 0, 0.4, 0)
+	OnButton.Font = Enum.Font.Highway
+	OnButton.FontSize = Enum.FontSize.Size18
+	OnButton.Text = "On"
+	OnButton.TextColor3 = Color3.new(0, 0, 0) -- Negro
+	OnButton.TextScaled = true
+	OnButton.TextSize = 18
+	OnButton.TextStrokeColor3 = Color3.new(1, 1, 1) -- Blanco
+	OnButton.TextStrokeTransparency = 0
+	
+	OffButton.Name = "OffButton"
+	OffButton.Parent = Frame
+	OffButton.BackgroundColor3 = Color3.fromRGB(61, 61, 41) -- Naranja claro
+	OffButton.BorderSizePixel = 0
+	OffButton.Position = UDim2.new(0.5, 0, 0.45, 0) -- Alineado en el centro vertical
+	OffButton.Size = UDim2.new(0.35, 0, 0.4, 0)
+	OffButton.Font = Enum.Font.Highway
+	OffButton.FontSize = Enum.FontSize.Size18
+	OffButton.Text = "Off"
+	OffButton.TextColor3 = Color3.new(0, 0, 0) -- Negro
+	OffButton.TextScaled = true
+	OffButton.TextSize = 18
+	OffButton.TextStrokeColor3 = Color3.new(1, 1, 1) -- Blanco
+	OffButton.TextStrokeTransparency = 0
+	
+	local function ToggleNoclip(enabled)
+		Clipon = enabled
+		if enabled then
+			for a, b in pairs(Workspace:GetChildren()) do
+				if b.Name == Plr.Name then
+					for i, v in pairs(b:GetDescendants()) do
+						if v:IsA("BasePart") then
+							v.CanCollide = false
+						end
+					end
+				end
+			end
+		else
+			for a, b in pairs(Workspace:GetChildren()) do
+				if b.Name == Plr.Name then
+					for i, v in pairs(b:GetDescendants()) do
+						if v:IsA("BasePart") then
+							v.CanCollide = true
+						end
+					end
+				end
+			end
+		end
+	end
+	
+	OnButton.MouseButton1Click:Connect(function()
+		ToggleNoclip(true)
+	end)
+	
+	OffButton.MouseButton1Click:Connect(function()
+		ToggleNoclip(false)
+	end)
+	
+	Frame.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			Dragging = true
+			Offset = input.Position - Frame.Position
+			Frame.CaptureFocus = true
+		end
+	end)
+	
+	UserInputService.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement then
+			if Dragging then
+				Frame.Position = UDim2.new(0, input.Position.X - Offset.X, 0, input.Position.Y - Offset.Y)
+			end
+		end
+	end)
+	
+	UserInputService.InputEnded:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			Dragging = false
+			Frame.CaptureFocus = false
+		end
+	end)
+	
+	ToggleNoclip(false) -- Noclip
+	end    
+})
+
+
+
+
+	Gay:AddSlider({
+		Name = "Walkspeed",
+		Min = 0,
+		Max = 600,
+		Default = 16,
+		Color = Color3.fromRGB(212, 16, 2),
+		Increment = 1,
+		ValueName = "Walkspeed",
+		Callback = function(v)
+			game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+		end    
+	})
+	
+
+	Gay:AddSlider({
+		Name = "JumpPower",
+		Min = 0,
+		Max = 600,
+		Default = 50,
+		Color = Color3.fromRGB(212, 16, 2),
+		Increment = 1,
+		ValueName = "JumpPower",
+		Callback = function(v)
+			game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
+		end    
+	})
+	
+	----Misc tab
+	local Sector = Window:MakeTab({
+		Name = "Misc",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+	
+	--[[
+	Name = <string> - The name of the tab.
+	Icon = <string> - The icon of the tab.
+	PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
+	]]
+
+	local MainStuff = Sector:AddSection({
+		Name = "Main"
+	})
+	
+	--[[
+	Name = <string> - The name of the section.
+	]]
+
+
+	----Buttons/toggles
+
+	MainStuff:AddButton({
+		Name = "Clear bad cop.",
+		Callback = function()
+
+
+			if game.PlaceId == 155615604 then
+
+				game.Players.LocalPlayer.Status.isBadGuard.Value = false 
+				
+				game.Players.LocalPlayer.Status.innocentKills.Value = 0
+				 
+				print ("Cleared bad cop.")
+
+				end
+		  end    
+	}) 
+
+
+	MainStuff:AddButton({
+		Name = "Destroy gui!",
+		Callback = function()
+			OrionLib:Destroy()
+		  end    
+	})
+
+	
+
+---------------------------------------------------
+		OrionLib:MakeNotification({
+			Name = "Zeus hub",
+			Content = "Zeus hub loaded!",
+			Image = "rbxassetid://4483345998",
+			Time = 5
+		})
+
+	end
+
